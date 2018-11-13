@@ -286,7 +286,7 @@ li a.active {
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   border-radius: 15px;
-  margin: 0px 14px;
+  margin: 10px 10px;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -295,6 +295,7 @@ li a.active {
 }
 .card h2 {
   text-align: center;
+  height: 62px;
 }
 .card .container{
   padding-bottom:100px;
@@ -402,11 +403,65 @@ margin: auto;
   padding-right: 3px;
 }
 
+
+@media only screen and (min-width: 200px) {  /* 480px +- */
+  .container {
+    width: 80%;
+  }
+  
+  .find-pro-button {
+  margin-top: -10px;
+  margin-left: 8px;
+  padding: 10px 20px;
+  }
+
+  #nav-logo{
+    width: 150px;
+
+  }
+  .searchbar{
+    margin: auto;
+  }
+  .searchbar h2{
+    font-size: 30px;
+
+  }
+  
+  .filters {
+    display:none;
+  }
+  .filter-form {
+    display: none;
+
+  }
+  
+
+
+}
+
+  
+
+
+
 @media only screen and (min-width: 33.75em) {  /* 540px */
   .container {
     width: 80%;
   }
+  
+  .find-pro-button {
+  margin-top: -10px;
+  margin-left: 70px;
+  padding: 10px 20px;
+ 
 }
+.filters {
+  display: flex;
+}
+.filter-form {
+  display: flex;
+
+}
+
 
 
 @media only screen and (min-width: 45em) {  /* 720px */
@@ -468,3 +523,4 @@ margin: auto;
     width: 75%;
   }
 }
+

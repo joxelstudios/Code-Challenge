@@ -1,10 +1,12 @@
-
 const handleFilter = function () {
-  $.getJSON("/dealers", function (data) {
+  let value = $('input[name=filter]:checked').val();
+  console.log(value);
+  $.getJSON(`/dealers/${value}`, function (data) {
     // Call our function to generate a table body
     $(".business-cards").empty();
-
-    data[0].dealers.forEach(element => {
+    
+    console.log(data);
+    data.forEach(element => {
       console.log(element.data.name);
       let business = element.data;
       let name = business.name;
@@ -17,32 +19,23 @@ const handleFilter = function () {
 
       let newCard = $(
         `<div class="col-4 col-12-sm">
-
         <div class="card">
-
           <div class="container">
-
               <div class="row">
                   <h2><b>${name}</b></h2>
                   <hr>
               </div>
-
               <div class="row">
                   <h2 class="business-phone"><img src="/assets/phone-icon-desktop.png" style="width: 30px;">
                       <b>${phone}</b></h2>
-              </div>
-
+              </div> 
               <div class="row">
-
                   <p id="email-text">Can't talk now? Click below to send an email.</p> <button class="contact-pro-button"><img
                           src="/assets/email-icon.png" style="width: 15px;"> Contact this Pro</button>
               </div>
-
               <div class="row">
-
-                  <p><b>Business Hours:</b></p>
+                <p><b>Business Hours:</b></p>
               </div>
-
               <div class="row">
                   <ul class="business-hours">
                       <li>Weekdays: ${weekHours}</li>
@@ -53,25 +46,19 @@ const handleFilter = function () {
           </div>
           <footer>
               <div class="row">
-
-
               </div>
-
-              <div class="row">
-              
-
+              <div class="row">           
               </div>
       </div>
       </footer>
   </div>
-</div>`);
-
+    </div>`);
 
       certs.forEach(element => {
         if (element === "Installation Pro") {
           newCard.find("footer .row:nth-of-type(1)").append(`<div class="col-6 pro"> <img src="/assets/star-installation-pro.png" style="width: 10px;"><label>Installation Pro</label></div>`);
           console.log(`Appending Installation Pro to ${name}`);
-          
+
         }
         if (element === "Commercial Pro") {
           newCard.find("footer .row:nth-of-type(2)").append(`<div class="col-6 pro"> <img src="/assets/users-commercial-pro.png" style="width: 10px;"> <label>Commercial Pro </label> </div>`);

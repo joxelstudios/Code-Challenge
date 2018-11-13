@@ -37,6 +37,35 @@ app.get("/dealers", function(req, res) {
   });
 });
 
+app.get("/dealers/:certs", function(req, res) {
+  let cert = req.params.certs;
+  let matches = [];
+  
+  // Query: In our database, go to the dealers collection, then "find" everything
+  db.dealers.find({}, function(err, found) {
+    // Log any errors if the server encounters one
+    if (err) {
+      console.log(err);
+    }
+    // Otherwise, send the result of this query to the browser
+    else {
+      // res.json(found);
+      found[0].dealers.forEach(element => {
+        
+        if(element.data.certifications.indexOf(cert) > -1){
+          console.log(`check!`);          
+          matches.push(element);
+        };
+              
+        
+          // console.log( res.json(element.data.certifications));
+      });
+    }
+    // setTimeout(function(){ res.json(matches); }, 2000); 
+    res.json(matches);
+  });
+});
+
 // Set the app to listen on port 3000
 app.listen(3000, function () {
   console.log("App running on port 3000!");
