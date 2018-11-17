@@ -1,0 +1,147 @@
+@media only screen and (min-width: 200px) {
+
+  /* 480px +- */
+  .container {
+    width: 80%;
+  }
+
+  .find-pro-button {
+    margin-top: -10px;
+    margin-left: 8px;
+    padding: 10px 20px;
+  }
+
+  #nav-logo {
+    width: 150px;
+
+  }
+
+  .searchbar {
+    margin: auto;
+  }
+
+  .searchbar h2 {
+    font-size: 30px;
+
+  }
+
+  
+  
+
+
+}
+
+
+@media only screen and (min-width: 540px) {
+
+  /* 540px */
+  .container {
+    width: 80%;
+  }
+
+  .find-pro-button {
+    margin-top: -10px;
+    margin-left: 70px;
+    padding: 10px 20px;
+
+  }
+
+  .filters {
+    display: flex;
+  }
+
+  .filter-form {
+    display: flex;
+
+  }
+}
+
+
+
+@media only screen and (min-width: 720px) {
+
+  /* 720px */
+  .col-1 {
+    width: 4.33%;
+  }
+
+  .col-2 {
+    width: 12.66%;
+  }
+
+  .col-3 {
+    width: 21%;
+  }
+
+  .col-4 {
+    width: 29.33%;
+  }
+
+  .col-5 {
+    width: 37.66%;
+  }
+
+  .col-6 {
+    width: 46%;
+  }
+
+  .col-7 {
+    width: 54.33%;
+  }
+
+  .col-8 {
+    width: 62.66%;
+  }
+
+  .col-9 {
+    width: 71%;
+  }
+
+  .col-10 {
+    width: 79.33%;
+  }
+
+  .col-11 {
+    width: 87.66%;
+  }
+
+  .col-12 {
+    width: 96%;
+  }
+
+  
+
+  
+}
+
+  
+@media only screen and (min-width: 960px) {
+
+  /* 960px */
+  .container {
+    width: 75%;
+  }
+  .hidden-lg{
+    display: hidden;
+  }
+  .hidden-sm {
+    display: block;
+  }
+  
+ 
+}
+
+@media only screen and (max-width: 1540px) {
+
+  .container {
+    width: 100%;
+  }
+  .hidden-lg{
+    display: hidden;
+  }
+  .hidden-sm {
+    display: block;
+  }
+  
+ 
+}

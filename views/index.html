@@ -1,74 +1,123 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Pool Pros</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/tools/css/reset/reset.css"> -->
-    <link rel="stylesheet" type="text/css" media="screen" href="/styles/styles.css" />
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Pool Pros</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/tools/css/reset/reset.css"> -->
+        <link rel="stylesheet" type="text/css" media="screen" href="/styles/styles.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="/styles/responsive.css" />
+        
 
-    
-</head>
 
-<body>
-    <header>
-        <div class="mini-header hidden-sm">
-            <ul>
-                <li>Dealers and Distributors</li>
-                <li>Commercial Service</li>
-            </ul>
+    </head>
+
+    <body>
+        <header>
+            <div class="mini-header hidden-sm">
+                <ul>
+                    <li>Commercial Service <img id="commercial-icon" src="/assets/action-commercial-icon.png"></li>
+                    <li>Dealers and Distributors</li>
+                </ul>
+            </div>
+            <!-- Nav Bar -->
+            <div class="nav-bg">
+                <nav class="row">
+                    <div class="col-3-sm">
+                        <img id="nav-logo" src="/assets/pool-pros-logo.png" alt="nav-logo">
+                    </div>
+                    <div class="col-9-sm">
+                        <ul>
+                            <li class="hidden-sm"><a href="#Pools">Pools & Spas</a></li>
+                            <li class="hidden-sm"><a href="#Supplies">Supplies</a></li>
+                            <li class="hidden-sm"><a href="#Resources">Resources</a></li>
+                            <li class="hidden-sm"><a href="#Services">Services</a></li>
+                            <li><button class="find-pro-button"><img id="marker-icon" src="/assets/location-icon.png"
+                                        style="width: 15px;">Find
+                                    a Pool Pro</button></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <img id="divider-image" src="/assets/water-image.png" alt="divider-image">
+        </header>
+
+        <!-- Search Bar -->
+        <div class="searchbar row">
+            <div class="dealers col-4 col-8-sm">
+                <h2> 7 Dealers in 28277</h2>
+            </div>
+            <div class="filters col-8 col-4-sm">
+                <h2> Filters:</h2>
+                <form class="filter-form hidden-sm">
+                    <label class="checkbox">service<input type="radio" name="filter" value="Service Pro"><span class="checkmark"></span></label>
+                    <label class="checkbox">installation<input type="radio" name="filter" value="Installation Pro"><span
+                            class="checkmark"></span></label>
+                    <label class="checkbox">residential<input type="radio" name="filter" value="Residential Pro"><span
+                            class="checkmark"></span></label>
+                    <label class="checkbox">commericial<input type="radio" name="filter" value="Commercial Pro"><span
+                            class="checkmark"></span></label>
+                    <select class="hidden-lg">
+                        <option value="Service Pro" selected="selected">service</option>
+                        <option value="Installation Pro">installation</option>
+                        <option value="Residential Pro">residential</option>
+                        <option value="Commercial Pro">commericial</option>
+                    </select>
+                </form>
+            </div>
         </div>
-        <!-- Nav Bar -->
-        <div class="nav-bg">
-            <nav class="row">
-                <div class="col-3-sm">
-                    <img id="nav-logo" src="/assets/pool-pros-logo.png" alt="nav-logo">
+        <!-- The Modal -->
+        <div id="contactModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-header">
+                <h2>Email</h2>
+                <h2 class="modal-dealerName"></h2>
+            </div>
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Fill out the form below and Premium Pools & Spas of Charlotte will get in touch.</p>
+                <div class="contactCard">
+                    <div class="container">
+                        <form id="contactDealer">
+                            First name:<br>
+                            <input type="text" name="firstname" placeholder="Mickey">
+                            <br>
+                            Last name:<br>
+                            <input type="text" name="lastname" placeholder="Mouse">
+                            <br>
+                            Email Address:<br>
+                            <input type="email" name="email" placeholder="Mouse">
+                            <br>
+                            Comments or Questions: <small class="optional">optional</small><br>
+                            <textarea name="comments" rows="6" cols="100">
+                                </textarea>
+                            <br>
+                            <h3>Do you currently own a pool or spa?<small class="optional">optional</small></h3>
+                            <button class="ownPool" name="ownPool" type="button" value="Yes">Yes</button>
+                            <button class="ownPool" name="ownPool" type="button" value="No">No</button>
+                            <hr>
+
+                            <br>
+                            <a href="javascript:{}" onclick="document.getElementById('contactDealer').submit(); return false;">Send
+                                my email<img src="/assets/next-arrow.png" style="width: 10px;"></a>
+                        </form>
+                    </div>
                 </div>
-                <div class="col-9-sm">
-                    <ul>
-                        <li class="hidden-sm"><a href="#Pools">Pools & Spas</a></li>
-                        <li class="hidden-sm"><a href="#Supplies">Supplies</a></li>
-                        <li class="hidden-sm"><a href="#Resources">Resources</a></li>
-                        <li class="hidden-sm"><a href="#Services">Services</a></li>
-                        <li><button class="find-pro-button"><img id="marker-icon" src="/assets/location-icon.png" style="width: 15px;">Find
-                                a Pool Pro</button></li>
-                    </ul>
-                </div>
-            </nav>
+            </div>
+            <div class="modal-footer">
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex.</p>
+            </div>
         </div>
-        <img id="divider-image" src="/assets/water-image.png" alt="divider-image">
-    </header>
 
-    <!-- Search Bar -->
-    <div class="searchbar row">
-        <div class="dealers col-4 col-8-sm">
-            <h2> 7 Dealers in 28277</h2>
-        </div>
-        <div class="filters col-8 col-4-sm">
-            <h2> Filters:</h2>
-            <form class="filter-form">
-                <label><input type="radio" name="filter" value="Service Pro">service</label>
-                <label><input type="radio" name="filter" value="Installation Pro">installation</label>
-                <label><input type="radio" name="filter" value="Residential Pro">residential</label>
-                <label><input type="radio" name="filter" value="Commercial Pro">commericial</label>
-            </form>
-        </div>
-    </div>
-    <!-- The Modal -->
-    <div id="contactModal" class="modal">
-
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Some text in the Modal..</p>
-        </div>
-    </div>
-
-    <!-- Business Cards -->
-    <div class="container">
-        <div class="row business-cards">
+        <!-- Business Cards -->
+        <div class="container">
+            <div class="row business-cards">
+            </div>
         </div>
 
         <!-- Footer Section -->
@@ -91,6 +140,12 @@
         </section>
         <section class="footer-small">
             <footer>
+                <div class="mini-footer hidden-lg">
+                    <ul>
+                        <li>Commercial Service <img id="commercial-icon" src="/assets/action-commercial-icon.png"></li>
+                        <li>Dealers and Distributors</li>
+                    </ul>
+                </div>
                 <div class="row">
                     <div class="col-4"></div>
                     <div class="col-4">
@@ -108,6 +163,6 @@
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="/js/index.js"></script>
 
-</body>
+    </body>
 
 </html>

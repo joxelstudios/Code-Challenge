@@ -106,6 +106,9 @@
 .hidden-sm {
   display: none;
 }
+.hidden-lg {
+  display: block;
+}
 
 
 html,
@@ -130,6 +133,10 @@ body {
   background: #083d8c;
   padding: 15px;
   z-index: 0;
+}
+#commercial-icon{
+  padding-left: 2px;
+  width: 15px;
 }
 
 .mini-header ul li {
@@ -165,8 +172,7 @@ nav {
   position: relative;
   top: 20px;
   margin: 10px 15px 15px 10px;
-  width: 200px;
-  
+  width: 200px;  
 }
 
 .find-pro-button {
@@ -239,6 +245,123 @@ li a.active {
   color: white;
   background-color: #4CAF50;
 }
+/* The container */
+.checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* Hide the browser's default checkbox */
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+
+/* On mouse-over, add a grey background color */
+.checkbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+.ownPool {
+	-moz-box-shadow:inset 0px 1px 3px 0px #016b69;
+	-webkit-box-shadow:inset 0px 1px 3px 0px #016b69;
+	box-shadow:inset 0px 1px 3px 0px #016b69;
+	background-color:#ffffff;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border:1px solid #016b69;
+	display:inline-block;
+	cursor:pointer;
+	color:black;
+	font-family:Arial;
+	font-size:19px;
+	font-weight:bold;
+	padding:11px 23px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #016b69;
+}
+.ownPool:hover {
+  background-color:#016b69;
+  color:white;
+}
+.ownPool:focus {
+	position:relative;
+  top:1px;
+  background-color:#01c7c7;
+  color:white;
+}
+#contactDealer{
+  font-weight: bold;
+  color: #6e6e6e;
+  width: 100%;
+}
+#contactDealer small{
+  padding-left: 50%;
+  font-weight: lighter;
+  font-style: italic
+}
+#contactDealer a{
+  margin: auto;
+  padding: 20px;
+  font-weight: bold;
+
+}
+
+
+
+    
 
 #find{
   border-radius: 26px 26px 26px 26px;
@@ -288,6 +411,7 @@ li a.active {
   border-radius: 15px;
   margin: 10px 10px;
 }
+
 
 /* On mouse-over, add a deeper shadow */
 .card:hover {
@@ -369,14 +493,40 @@ li a.active {
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
+.modal-header {
+  background-color: #083d8c;
+  margin: 15% auto; /* 15% from the top and centered */
+  margin-bottom: 0px;
+  padding: 20px;
+  width: 60%; /* Could be more or less, depending on screen size */
+  color: #fefefe;
+}
 
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
+  margin-top: 0px;
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 60%; /* Could be more or less, depending on screen size */
+}
+.modal-footer {
+  background-color: #f6f6f6;
+  margin: 15% auto;
+  margin-top: -15%;
+  padding: 20px;
+  color: #888;
+  font-size: 15px;
+  width: 60%;
+}
+.contactCard{
+  background: #f6f6f6;
+  transition: 0.3s;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  margin: 10px 10px;
+  padding-bottom: 30px;
 }
 
 /* The Close Button */
@@ -439,125 +589,3 @@ margin: auto;
   padding-left: 3px;
   padding-right: 3px;
 }
-
-
-@media only screen and (min-width: 200px) {  /* 480px +- */
-  .container {
-    width: 80%;
-  }
-  
-  .find-pro-button {
-  margin-top: -10px;
-  margin-left: 8px;
-  padding: 10px 20px;
-  }
-
-  #nav-logo{
-    width: 150px;
-
-  }
-  .searchbar{
-    margin: auto;
-  }
-  .searchbar h2{
-    font-size: 30px;
-
-  }
-  
-  .filters {
-    display:none;
-  }
-  .filter-form {
-    display: none;
-
-  }
-  
-
-
-}
-
-  
-
-
-
-@media only screen and (min-width: 33.75em) {  /* 540px */
-  .container {
-    width: 80%;
-  }
-  
-  .find-pro-button {
-  margin-top: -10px;
-  margin-left: 70px;
-  padding: 10px 20px;
- 
-}
-.filters {
-  display: flex;
-}
-.filter-form {
-  display: flex;
-
-}
-
-
-
-@media only screen and (min-width: 45em) {  /* 720px */
-  .col-1 {
-    width: 4.33%;
-  }
-
-  .col-2 {
-    width: 12.66%;
-  }
-
-  .col-3 {
-    width: 21%;
-  }
-
-  .col-4 {
-    width: 29.33%;
-  }
-
-  .col-5 {
-    width: 37.66%;
-  }
-
-  .col-6 {
-    width: 46%;
-  }
-
-  .col-7 {
-    width: 54.33%;
-  }
-
-  .col-8 {
-    width: 62.66%;
-  }
-
-  .col-9 {
-    width: 71%;
-  }
-
-  .col-10 {
-    width: 79.33%;
-  }
-
-  .col-11 {
-    width: 87.66%;
-  }
-
-  .col-12 {
-    width: 96%;
-  }
-
-  .hidden-sm {
-    display: block;
-  }
-}
-
-@media only screen and (min-width: 60em) { /* 960px */
-  .container {
-    width: 75%;
-  }
-}
-

@@ -32,7 +32,7 @@ $(document).ready(function () {
                         <b>${phone}</b></h2>
                 </div> 
                 <div class="row">
-                    <p id="email-text">Can't talk now? Click below to send an email.</p> <button class="contact-pro-button" id="contact" ><img
+                    <p id="email-text">Can't talk now? Click below to send an email.</p> <button class="contact-pro-button" data-title=\"${name}\" id="contact" ><img
                             src="/assets/email-icon.png" style="width: 15px;"> Contact this Pro</button>
                 </div>
                 <div class="row">
@@ -97,6 +97,7 @@ $(document).ready(function () {
 
   $(document).on("click","#contact", function(){
     $(".modal").css("display", "block");
+    $(".modal-dealerName").text($(this).data("title"));
   });
 
 
