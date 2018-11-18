@@ -1,5 +1,3 @@
-
-
 @font-face {
   font-family: Open-Sans;
   src: url(../assets/open-sans/OpenSans-Regular.ttf)
@@ -13,6 +11,10 @@
 [class*="col-"] {
   float: left;
   padding: 15px;
+}
+
+textarea {
+  width: -webkit-fill-available;
 }
 
 /* Grid Setup */
@@ -98,17 +100,11 @@
 }
 
 .row::after {
-	content: "";
-	display: table;
-	clear: both;
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.hidden-sm {
-  display: none;
-}
-.hidden-lg {
-  display: block;
-}
 
 
 html,
@@ -128,13 +124,14 @@ body {
   background: #ffff;
 }
 
-.mini-header{
+.mini-header {
   width: 100%;
   background: #083d8c;
   padding: 15px;
   z-index: 0;
 }
-#commercial-icon{
+
+#commercial-icon {
   padding-left: 2px;
   width: 15px;
 }
@@ -150,11 +147,12 @@ body {
 nav {
   width: 100%;
   margin: 0;
-  overflow:hidden;
+  overflow: hidden;
   text-align: center;
   font-weight: bold;
-  
+
 }
+
 .nav-bg {
   overflow: hidden;
   background: #ffffff;
@@ -162,17 +160,93 @@ nav {
   -moz-border-radius: 5px 5px 5px 5px;
   -webkit-border-radius: 5px 5px 5px 5px;
   border: 0px solid #000000;
-  -webkit-box-shadow: 0px 5px 5px 0px rgba(181,181,181,1);
-  -moz-box-shadow: 0px 5px 5px 0px rgba(181,181,181,1);
-  box-shadow: 0px 5px 5px 0px rgba(181,181,181,1);
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(181, 181, 181, 1);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(181, 181, 181, 1);
+  box-shadow: 0px 5px 5px 0px rgba(181, 181, 181, 1);
 }
 
-#nav-logo{
+#nav-logo {
   float: left;
   position: relative;
   top: 20px;
   margin: 10px 15px 15px 10px;
-  width: 200px;  
+  width: 200px;
+}
+
+/* The sidepanel menu */
+.sidepanel {
+  height: 500px;
+  /* Specify a height */
+  width: 0;
+  /* 0 width - change this with JavaScript */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  right: 0;
+  background-color: white;
+  /* Black*/
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  padding-top: 60px;
+  /* Place content 60px from the top */
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in the sidepanel */
+  border-top: 12px solid #0BC9C8;
+  border-bottom: 12px solid #0BC9C8;
+
+}
+
+/* The sidepanel links */
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  margin-bottom: 4px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  padding-right: 20px;
+  background: #f6f6f6;
+}
+
+.sidepanel h1 {
+  color: blue;
+}
+
+.sidepanel img {
+  float: right;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidepanel a:hover {
+  color: black;
+}
+
+/* Position and style the close button (top right corner) */
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  color: #0bc9c8;
+  background: none;
+}
+
+/* Style the button that is used to open the sidepanel */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: white;
+  color: blue;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
 }
 
 .find-pro-button {
@@ -190,17 +264,16 @@ nav {
   -o-text-overflow: clip;
   text-overflow: clip;
   background: #ffffff;
-  -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
-  box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
-  text-shadow: -1px -1px 0 rgba(15,73,168,0.66) ;
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+  text-shadow: -1px -1px 0 rgba(15, 73, 168, 0.66);
   -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
   -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
   -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
   transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
 }
-#marker-icon{
-  margin-right: 10px;
-}
+
+#marker-icon {}
 
 .find-pro-button:hover {
   color: #ffffff;
@@ -216,25 +289,24 @@ nav ul {
   background-color: #ffffff;
 }
 
-nav ul li{
+nav ul li {
   padding-top: 30px;
-  padding-right: 20px;
   margin-left: 10%;
   float: left;
   list-style-type: none;
 }
 
 li {
-  float: right;  
+  float: right;
 }
 
-nav > ul > li > a{
+nav>ul>li>a {
   margin-right: 80px;
   color: #aaa;
   line-height: 2em;
   padding: 0.5em 1em;
   text-decoration: none;
-  color: blue; 
+  color: blue;
 }
 
 li a:hover:not(.active) {
@@ -245,6 +317,7 @@ li a.active {
   color: white;
   background-color: #4CAF50;
 }
+
 /* The container */
 .checkbox {
   display: block;
@@ -258,6 +331,7 @@ li a.active {
   -ms-user-select: none;
   user-select: none;
 }
+
 /* Hide the browser's default checkbox */
 .checkbox input {
   position: absolute;
@@ -266,6 +340,7 @@ li a.active {
   height: 0;
   width: 0;
 }
+
 /* Create a custom checkbox */
 .checkmark {
   position: absolute;
@@ -278,12 +353,12 @@ li a.active {
 
 
 /* On mouse-over, add a grey background color */
-.checkbox:hover input ~ .checkmark {
+.checkbox:hover input~.checkmark {
   background-color: #ccc;
 }
 
 /* When the checkbox is checked, add a blue background */
-.checkbox input:checked ~ .checkmark {
+.checkbox input:checked~.checkmark {
   background-color: #2196F3;
 }
 
@@ -295,7 +370,7 @@ li a.active {
 }
 
 /* Show the checkmark when checked */
-.checkbox input:checked ~ .checkmark:after {
+.checkbox input:checked~.checkmark:after {
   display: block;
 }
 
@@ -314,45 +389,50 @@ li a.active {
 
 
 .ownPool {
-	-moz-box-shadow:inset 0px 1px 3px 0px #016b69;
-	-webkit-box-shadow:inset 0px 1px 3px 0px #016b69;
-	box-shadow:inset 0px 1px 3px 0px #016b69;
-	background-color:#ffffff;
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
-	border-radius:5px;
-	border:1px solid #016b69;
-	display:inline-block;
-	cursor:pointer;
-	color:black;
-	font-family:Arial;
-	font-size:19px;
-	font-weight:bold;
-	padding:11px 23px;
-	text-decoration:none;
-	text-shadow:0px -1px 0px #016b69;
+  -moz-box-shadow: inset 0px 1px 3px 0px #016b69;
+  -webkit-box-shadow: inset 0px 1px 3px 0px #016b69;
+  box-shadow: inset 0px 1px 3px 0px #016b69;
+  background-color: #ffffff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #016b69;
+  display: inline-block;
+  cursor: pointer;
+  color: black;
+  font-family: Arial;
+  font-size: 19px;
+  font-weight: bold;
+  padding: 11px 23px;
+  text-decoration: none;
+  text-shadow: 0px -1px 0px #016b69;
 }
+
 .ownPool:hover {
-  background-color:#016b69;
-  color:white;
+  background-color: #016b69;
+  color: white;
 }
+
 .ownPool:focus {
-	position:relative;
-  top:1px;
-  background-color:#01c7c7;
-  color:white;
+  position: relative;
+  top: 1px;
+  background-color: #01c7c7;
+  color: white;
 }
-#contactDealer{
+
+#contactDealer {
   font-weight: bold;
   color: #6e6e6e;
   width: 100%;
 }
-#contactDealer small{
-  padding-left: 50%;
+
+#contactDealer small {
+  float: right;
   font-weight: lighter;
   font-style: italic
 }
-#contactDealer a{
+
+#contactDealer a {
   margin: auto;
   padding: 20px;
   font-weight: bold;
@@ -361,50 +441,54 @@ li a.active {
 
 
 
-    
 
-#find{
+
+#find {
   border-radius: 26px 26px 26px 26px;
   -moz-border-radius: 26px 26px 26px 26px;
   -webkit-border-radius: 26px 26px 26px 26px;
   border: 13px solid #2e3de6;
   background: white;
- 
+
 }
+
 #divider-image {
   margin-top: 30px;
   width: 100%;
 }
-.searchbar{
+
+.searchbar {
   margin: auto;
   width: 70%;
   background: #f6f6f6;
-  border-radius:10px;
-  -moz-border-radius:10px;
-  -webkit-border-radius:10px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
 }
 
-.dealers{
+.dealers {
   color: #216ddf;
-  padding-left: 150px;
-  border-right:5px solid #ececec;
+  border-right: 5px solid #ececec;
   width: 30%;
 }
-.filters{
+
+.filters {
   color: #3f3f3f;
   width: 70%;
-  display: flex;
+  display: inline-flex;
 }
+
 .filter-form {
   margin: auto;
-  display: flex;
 }
+
 .filter-form label {
   margin-right: 40px;
 }
+
 .card {
   /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
@@ -415,48 +499,58 @@ li a.active {
 
 /* On mouse-over, add a deeper shadow */
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
+
 .card h2 {
   text-align: center;
   height: 62px;
 }
-.card .container{
-  padding-bottom:100px;
+
+.card .container {
+  padding-bottom: 100px;
   text-align: center;
 }
-.card p{
-  padding: 20px;;
-  padding:10px;
+
+.card p {
+  padding: 20px;
+  ;
+  padding: 10px;
 }
-.card ul{
+
+.card ul {
   margin: auto;
   display: grid;
 }
-.card footer{
+
+.card footer {
   background: #f6f6f6;
   width: 100%;
 }
-#email-text{
+
+#email-text {
   font-style: italic;
   font-size: 81%;
 }
 
-.pro{
+.pro {
   text-align: center;
   display: block;
   font-size: 11px;
 }
-.pro label{
+
+.pro label {
   padding-left: 3px;
 }
-.business-cards{
+
+.business-cards {
   background: white;
-  padding: auto;
 }
-.business-hours{
+
+.business-hours {
   list-style-type: none;
 }
+
 .contact-pro-button {
   margin: auto;
   display: flex;
@@ -472,44 +566,63 @@ li a.active {
   -o-text-overflow: clip;
   text-overflow: clip;
   background: #ffffff;
-  -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
-  box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
-  text-shadow: -1px -1px 0 rgba(15,73,168,0.66) ;
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+  text-shadow: -1px -1px 0 rgba(15, 73, 168, 0.66);
   -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
   -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
   -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
   transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
 }
+
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
 }
+
 .modal-header {
   background-color: #083d8c;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 15% auto;
+  /* 15% from the top and centered */
   margin-bottom: 0px;
   padding: 20px;
-  width: 60%; /* Could be more or less, depending on screen size */
+  width: 60%;
+  /* Could be more or less, depending on screen size */
   color: #fefefe;
 }
 
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 15% auto;
+  /* 15% from the top and centered */
   margin-top: 0px;
   padding: 20px;
-  width: 60%; /* Could be more or less, depending on screen size */
+  width: 60%;
+  /* Could be more or less, depending on screen size */
 }
+
+.modal-content h3 {
+  display: inline;
+}
+
 .modal-footer {
   background-color: #f6f6f6;
   margin: 15% auto;
@@ -519,7 +632,8 @@ li a.active {
   font-size: 15px;
   width: 60%;
 }
-.contactCard{
+
+.contactCard {
   background: #f6f6f6;
   transition: 0.3s;
   -webkit-border-radius: 15px;
@@ -550,34 +664,40 @@ li a.active {
   margin-right: auto;
 }
 
-.footer-large{
+.footer-large {
   margin-top: 30px;
   padding: 20px;
   background: #083d8c;
 }
-.footer-logo{
+
+.footer-logo {
   margin: auto;
   width: 300px;
   display: flex;
 }
+
 #connect-text {
-margin: auto;
+  margin: auto;
 }
-.social-icon{
+
+.social-icon {
   margin: auto;
   height: 30px;
 }
+
 .connect-text {
   margin: auto;
   color: white;
   display: -webkit-box;
 }
-.footer-small{
+
+.footer-small {
   margin: 0px;
   padding-bottom: 60px;
   background: #216ddf;
 
 }
+
 .footer-small ul {
   list-style-type: none;
   margin: auto;
@@ -588,4 +708,60 @@ margin: auto;
   color: white;
   padding-left: 3px;
   padding-right: 3px;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: white;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content label {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content label:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: white;
+}
+
+.hidden-sm {
+  display: none;
+}
+
+.hidden-lg {
+  display: block;
 }

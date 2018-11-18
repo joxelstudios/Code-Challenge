@@ -21,15 +21,28 @@
   }
 
   .searchbar h2 {
-    font-size: 30px;
+    font-size: 10px;
+
+  } 
+
+  .dropFilter{
+    display: block;
+  }
+  
+  .business-cards .card{
+    margin: auto;
+
 
   }
 
-  
-  
-
-
+  .modal-header, .modal-content, .modal-footer {
+    width: 90%;
+  }
+  textarea{
+    width: -webkit-fill-available;
+  }
 }
+
 
 
 @media only screen and (min-width: 540px) {
@@ -38,21 +51,15 @@
   .container {
     width: 80%;
   }
+  .searchbar h2 {
+    font-size: 20px;
+
+  } 
 
   .find-pro-button {
     margin-top: -10px;
     margin-left: 70px;
     padding: 10px 20px;
-
-  }
-
-  .filters {
-    display: flex;
-  }
-
-  .filter-form {
-    display: flex;
-
   }
 }
 
@@ -108,6 +115,19 @@
   .col-12 {
     width: 96%;
   }
+ 
+  .dropFilter{
+    display: block;
+  }
+  .dealers, .dealers h2{
+  
+  }
+  .business-cards .col-4{
+    margin: auto;
+    width: 100%;
+
+  }
+  
 
   
 
@@ -121,27 +141,52 @@
   .container {
     width: 75%;
   }
-  .hidden-lg{
-    display: hidden;
-  }
   .hidden-sm {
     display: block;
   }
+  .openbtn{
+    display: none;
+  }
+  .dropFilter{
+    display: none;
+  }
+  .dropbtn {
+    display: none;
+  }
+  .find-pro-button {
+    margin-top: -10px;
+    margin-left: 8px;
+    padding: 10px 20px;
+  }  
   
- 
 }
 
-@media only screen and (max-width: 1540px) {
+
+
+@media only screen and (min-width: 1540px) {
 
   .container {
     width: 100%;
   }
-  .hidden-lg{
-    display: hidden;
+  .filter-form{
+    display: inline-flex;
+  } 
+  .business-cards{
+    margin: auto;
+
   }
-  .hidden-sm {
-    display: block;
+  .business-cards .col-4{
+    margin: auto;
+    width: 33%;
   }
   
  
+  
+}
+@media only screen and (min-width: 1600px) {
+
+  .container {
+    width: 100%;
+  }
+
 }

@@ -113,4 +113,7 @@ $(document).ready(function () {
       $(".modal").css("display", "none");
     }
   }
+  /* Set the width of the sidebar to 250px (show it) */
+
+
 });
