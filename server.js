@@ -50,7 +50,6 @@ app.get("/dealers/:certs", function(req, res) {
     }
     // Otherwise, send the result of this query to the browser
     else {
-      // res.json(found);
       found[0].dealers.forEach(element => {
         
         if(element.data.certifications.indexOf(cert) > -1){
@@ -59,15 +58,13 @@ app.get("/dealers/:certs", function(req, res) {
         };
               
         
-          // console.log( res.json(element.data.certifications));
       });
     }
-    // setTimeout(function(){ res.json(matches); }, 2000); 
     res.json(matches);
   });
 });
 
-// Set the app to listen on port 3000
+
 app.listen(PORT, function () {
   console.log("App running on" + PORT);
 });
