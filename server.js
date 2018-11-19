@@ -1,17 +1,15 @@
 // Dependencies
 var express = require("express");
 var mongojs = require("mongojs");
-var mongoose = require("mongoose");
 
 // Initialize Express
 var app = express();
 
 // Database configuration
 // Save the URL of our database as well as the name of our collection
-var databaseUrl = "poolpros";
+var databaseUrl = process.env.MONGODB_URI || "poolpros";
 var collections = ["dealers"];
 const PORT = process.env.PORT || 3001;
-mongoose.connect(process.env.MONGODB_URI||"mongodb://localhost/")
 
 app.use(express.static(__dirname + '/public'));
 // Use mongojs to hook the database to the db variable
