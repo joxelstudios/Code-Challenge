@@ -9,6 +9,8 @@ var app = express();
 // Save the URL of our database as well as the name of our collection
 var databaseUrl = "poolpros";
 var collections = ["dealers"];
+const PORT = process.env.PORT;
+mongoose.connect(process.env.MONGODB_URI||"mongodb://localhost/")
 
 app.use(express.static(__dirname + '/public'));
 // Use mongojs to hook the database to the db variable
@@ -67,6 +69,6 @@ app.get("/dealers/:certs", function(req, res) {
 });
 
 // Set the app to listen on port 3000
-app.listen(3000, function () {
+app.listen(PORT, function () {
   console.log("App running on port 3000!");
 });
