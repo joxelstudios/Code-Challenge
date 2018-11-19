@@ -1,6 +1,7 @@
 // Dependencies
 var express = require("express");
 var mongojs = require("mongojs");
+var mongoose = require("mongoose");
 
 // Initialize Express
 var app = express();
@@ -9,7 +10,7 @@ var app = express();
 // Save the URL of our database as well as the name of our collection
 var databaseUrl = "poolpros";
 var collections = ["dealers"];
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3001;
 mongoose.connect(process.env.MONGODB_URI||"mongodb://localhost/")
 
 app.use(express.static(__dirname + '/public'));
@@ -70,5 +71,5 @@ app.get("/dealers/:certs", function(req, res) {
 
 // Set the app to listen on port 3000
 app.listen(PORT, function () {
-  console.log("App running on port 3000!");
+  console.log("App running on" + PORT);
 });
