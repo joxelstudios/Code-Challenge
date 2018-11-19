@@ -4,18 +4,18 @@
     "password": "root",
     "database": "poolpros",
     "host": "localhost",
-    "dialect": "mysql"
+    "dialect": "nosql"
   },
   "test": {
     "username": "root",
     "password": null,
     "database": "testdb",
     "host": "localhost",
-    "dialect": "mysql",
+    "dialect": "nosql",
     "logging": false
   },
   "production": {
-    "use_env_variable": "JAWSDB_URL",
-    "dialect": "mysql"
+    "use_env_variable": "MONGODB_URI",
+    "dialect": "nosql"
   }
 }
